@@ -10,14 +10,16 @@ const dataList = [
   { name: "Third", amount: 10, color: "#F7931A"},
 ];
 
-function clicked(){
-  console.log('x');
-}
-
 function App() {
   const [active, setActive] = useState(null);
+  const [menu, setMenu] = useState(false);
   const width = 500;
   const half = width/2;
+
+  function clicked(){
+    setMenu(!menu);
+  }
+
   return (
     <main>
       <svg width={width} height={width}>
@@ -36,6 +38,7 @@ function App() {
               return pie.arcs.map((arc) => {
                 return (
                   <g
+                    
                     key={arc.data.symbol}
                     onMouseEnter={() => setActive(arc.data)}
                     onMouseLeave={() => setActive(null)}
@@ -68,9 +71,10 @@ function App() {
                 {`${dataList.length} Teams`}
               </Text>
             </>
-          )}  
+          )}
         </Group>
       </svg>
+      {menu ? (<label className='menu'>TEST</label>) : null}
     </main>
   );
 }
