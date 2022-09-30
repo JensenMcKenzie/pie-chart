@@ -41,8 +41,11 @@
   display: flex;
   top: 20%;
   margin-inline: auto;
-  width: 100px;
-  height: 50px;
+  width: 50%;
   background-color: red;
   text-align: center;
+}
+
+.arc{
+  transition: .5s;
 }
